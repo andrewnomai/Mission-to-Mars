@@ -19,6 +19,7 @@ mongo = PyMongo(app)
 def index():
 
    mars = mongo.db.mars.find_one()
+   print(mars)
 
    return render_template("index.html", mars=mars)
 
@@ -35,10 +36,6 @@ def scrape():
 
    return redirect('/', code=302)
 
-
-.update_one(query_parameter, {"$set": data}, options)
-
-mars.update_one({}, {"$set":mars_data}, upsert=True)
 
 if __name__ == "__main__":
    
